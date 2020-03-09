@@ -50,10 +50,8 @@ def multiple_ints(first_value: int, second_value: int) -> int:
     """
     new_first_value = int(first_value)
     new_second_value = int(second_value)
-    if new_first_value != int(first_value) and new_second_value != int(second_value):
-        raise ValueError
-    else:
-        return new_first_value * new_second_value
+
+    return new_first_value * new_second_value
 
 
 def multiple_ints_with_conversion(first_value: Any, second_value: Any) -> int:
@@ -86,10 +84,8 @@ def multiple_ints_with_conversion(first_value: Any, second_value: Any) -> int:
 
     new_first_value = int(first_value)
     new_second_value = int(second_value)
-    if new_first_value != int(first_value) and new_second_value != int(second_value):
-        raise ValueError
-    else:
-        return new_first_value * new_second_value
+
+    return new_first_value * new_second_value
 
 
 def is_word_in_text(word: str, text: str) -> bool:
@@ -109,7 +105,7 @@ def is_word_in_text(word: str, text: str) -> bool:
         >>> False
 
     """
-    if word in text.split(' '):
+    if word in text.split():
         return True
     else:
         return False
@@ -168,6 +164,7 @@ def simple_sort(data: List[int]) -> List[list]:
     """
 
     new_data = []
+
     while data:
         minimum = data[0]
         for x in data:
