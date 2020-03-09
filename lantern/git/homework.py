@@ -48,12 +48,11 @@ def multiple_ints(first_value: int, second_value: int) -> int:
     Returns:
         Product of elements
     """
+    
     new_first_value = int(first_value)
     new_second_value = int(second_value)
-    if new_first_value != int(first_value) and new_second_value != int(second_value):
-        raise ValueError
-    else:
-        return new_first_value * new_second_value
+    
+    return new_first_value * new_second_value
 
 
 def multiple_ints_with_conversion(first_value: Any, second_value: Any) -> int:
@@ -86,10 +85,8 @@ def multiple_ints_with_conversion(first_value: Any, second_value: Any) -> int:
 
     new_first_value = int(first_value)
     new_second_value = int(second_value)
-    if new_first_value != int(first_value) and new_second_value != int(second_value):
-        raise ValueError
-    else:
-        return new_first_value * new_second_value
+    
+    return new_first_value * new_second_value
 
 
 def is_word_in_text(word: str, text: str) -> bool:
