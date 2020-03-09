@@ -48,11 +48,12 @@ def multiple_ints(first_value: int, second_value: int) -> int:
     Returns:
         Product of elements
     """
-    
     new_first_value = int(first_value)
     new_second_value = int(second_value)
-    
-    return new_first_value * new_second_value
+    if new_first_value != int(first_value) and new_second_value != int(second_value):
+        raise ValueError
+    else:
+        return new_first_value * new_second_value
 
 
 def multiple_ints_with_conversion(first_value: Any, second_value: Any) -> int:
@@ -85,8 +86,10 @@ def multiple_ints_with_conversion(first_value: Any, second_value: Any) -> int:
 
     new_first_value = int(first_value)
     new_second_value = int(second_value)
-    
-    return new_first_value * new_second_value
+    if new_first_value != int(first_value) and new_second_value != int(second_value):
+        raise ValueError
+    else:
+        return new_first_value * new_second_value
 
 
 def is_word_in_text(word: str, text: str) -> bool:
@@ -148,11 +151,10 @@ def alphabet() -> dict:
         alphabet()
         >>> {"a": 1, "b": 2 ...}
     """
-    a = {}
-    for i in range(1, 27):
-        a.update({i: chr(i + 96)})
+    key_value = {}
 
-    return a
+    for i in sorted(key_value.keys()):
+        print(i, end=' ')
 
 
 def simple_sort(data: List[int]) -> List[list]:
@@ -170,6 +172,6 @@ def simple_sort(data: List[int]) -> List[list]:
             if x < minimum:
                 minimum = x
         new_data.append(minimum)
-        data.remove(minimum)
+        new_data.remove(minimum)
 
     return new_data
