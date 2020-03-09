@@ -151,10 +151,11 @@ def alphabet() -> dict:
         alphabet()
         >>> {"a": 1, "b": 2 ...}
     """
-    key_value = {}
+    a = {}
+    for i in range(1, 27):
+        a.update({i: chr(i + 96)})
 
-    for i in sorted(key_value.keys()):
-        print(i, end=' ')
+    return a
 
 
 def simple_sort(data: List[int]) -> List[list]:
@@ -172,6 +173,6 @@ def simple_sort(data: List[int]) -> List[list]:
             if x < minimum:
                 minimum = x
         new_data.append(minimum)
-        new_data.remove(minimum)
+        data.remove(minimum)
 
     return new_data
