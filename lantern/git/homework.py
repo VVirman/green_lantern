@@ -56,7 +56,6 @@ def multiple_ints(first_value: int, second_value: int) -> int:
         raise TypeError
 
 
-
 def multiple_ints_with_conversion(first_value: Any, second_value: Any) -> int:
     """
     If possible to convert arguments to int value - convert and multiply them.
@@ -118,10 +117,8 @@ def some_loop_exercise() -> list:
     """
     Use loop to create list that contain int values from 0 to 12 except 6 and 7
     """
-    list_1 = []
-    for x in range(0, 13):
-        if 0 <= x < 6 or 7 < x <= 12:
-            list_1.append(x)
+    list_1 = [x for x in range(0, 13) if 0 <= x < 6 or 7 < x <= 12]
+
     return list_1
 
 
@@ -134,12 +131,11 @@ def remove_from_list_all_negative_numbers(data: List[int]) -> list:
         remove_from_list_all_negative_numbers([1, 5, -7, 8, -1])
         >>> [1, 5, 8]
     """
-    a = data[:]
+    a = [x for x in data if x >= 0]
 
-    for x in data:
-        if x < 0:
-            a.remove(x)
-    return a
+    copied_a = a[:]
+
+    return copied_a
 
 
 def alphabet() -> dict:
@@ -151,9 +147,7 @@ def alphabet() -> dict:
         >>> {"a": 1, "b": 2 ...}
     """
 
-    a = {}
-    for i in range(1, 27):
-        a.update({i: chr(i + 96)})
+    a = {i: chr(i+96) for i in range(1, 27)}
 
     return a
 
@@ -176,4 +170,6 @@ def simple_sort(data: List[int]) -> List[list]:
         new_data.append(minimum)
         data.remove(minimum)
 
-    return new_data
+    copied_data = new_data[:]
+
+    return copied_data
