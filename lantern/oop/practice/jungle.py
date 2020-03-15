@@ -10,7 +10,6 @@ class Jungle:
         self.predators = predators
         self.herbivorous = herbivorous
 
-
 JUNGLE = Jungle(predators=[], herbivorous=[])
 
 
@@ -26,6 +25,7 @@ class Animal(ABC):
 
 
 class Predator(Animal):
+
     def __init__(self, weight, speed, power):
         super().__init__(weight, speed)
         self.power = power
@@ -52,26 +52,31 @@ class Herbivorous(Animal):
 
 
 if __name__ == "__main__":
-    # test if predator can hunt herbicorous
+    #test if predator can hunt herb
     simba = Predator(weight=100, speed=100, power=70)
     timon = Herbivorous(weight=10, speed=114)
-    JUNGLE.predators.append(simba)
     JUNGLE.herbivorous.append(timon)
+    JUNGLE.herbivorous.append(simba)
     try:
         print(simba.hunt())
     except AttributeError:
-        print('hunt is hidden')
+        print('encaps works!!!')
     else:
         print('something wrong')
-    # end of test
+    #end of test
 
-    # test of eat method
+    #test of eat method
     print(simba.eat())
-
-    # test animal fo abstract class
+    #test animal for abstract class
     try:
         animal = Animal(weight=5, speed=10)
     except TypeError:
-        print('it`s ok')
+        print("OK")
     else:
         print('something goes wrong')
+
+
+
+
+
+
